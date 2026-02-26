@@ -1,0 +1,20 @@
+{
+  "name": "interskill",
+  "version": "0.1.0",
+  "description": "Skill authoring toolkit — unified skill creation, TDD-adapted testing, and audit. Consolidated from interdev's create-agent-skills and writing-skills.",
+  "author": {
+    "name": "MK"
+  },
+  "license": "MIT",
+  "keywords": [
+    "skill-authoring",
+    "skill-creation",
+    "skill-audit",
+    "skill-testing",
+    "tdd"
+  ],
+  "skills": [
+    "./skills/create",
+    "./skills/audit"
+  ]
+}
