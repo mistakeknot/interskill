@@ -19,6 +19,7 @@ Given a skill path (SKILL.md or skill directory), check each item below. Report 
 - [ ] `description` field present and specific (includes trigger keywords)
 - [ ] SKILL.md under 500 lines
 - [ ] References one level deep from SKILL.md (no nested chains)
+- [ ] SKILL-compact.md exists if SKILL.md > 200 lines (run `gen-skill-compact.sh --check <dir>` to verify freshness)
 
 ### Invocation Control
 - [ ] `disable-model-invocation: true` set if skill has side effects (deploy, commit, send)
@@ -44,7 +45,7 @@ Given a skill path (SKILL.md or skill directory), check each item below. Report 
 ```
 Skill Audit: {skill-name}
 ──────────────────────────────
-Structure:          {N}/5 pass
+Structure:          {N}/6 pass
 Invocation Control: {N}/4 pass
 Content Quality:    {N}/5 pass
 Anti-Patterns:      {N}/4 pass
