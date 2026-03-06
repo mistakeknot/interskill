@@ -14,7 +14,7 @@
     "tdd"
   ],
   "skills": [
-    "./skills/create",
+    "./skills/skill",
     "./skills/audit"
   ]
 }
