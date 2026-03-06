@@ -1,6 +1,6 @@
 ---
-name: create
-description: Expert guidance for creating Claude Code skills and slash commands. Use when working with SKILL.md files, authoring new skills, improving existing skills, creating slash commands, or understanding skill structure and best practices.
+name: skill
+description: Expert guidance for creating Claude Code skills and slash commands — SKILL.md authoring, frontmatter, TDD pressure testing. For full plugin lifecycle (structure, release, marketplace), use /interplug:plugin.
 ---
 
 # Creating Skills & Commands

@@ -79,7 +79,7 @@ interskill/
 
 ## How It Works
 
-### `/interskill:create`
+### `/interskill:skill`
 Two-phase workflow:
 1. **Spec phase** — define skill name, description, trigger patterns, argument handling, tool permissions, output format
 2. **Quality phase** — TDD-adapted pressure testing: write test scenarios, run skill against them, iterate until robust

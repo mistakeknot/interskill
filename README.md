@@ -27,7 +27,7 @@ Then install the plugin:
 Create a new skill:
 
 ```
-/interskill:create
+/interskill:skill
 ```
 
 Or ask naturally:

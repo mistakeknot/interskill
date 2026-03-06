@@ -6,7 +6,7 @@ Skill authoring toolkit — unified skill creation, TDD-adapted testing, and aud
 
 | Skill | What it does |
 |-------|-------------|
-| `create` | Unified skill creation workflow (spec phase + quality phase + TDD pressure testing) |
+| `skill` | Unified skill creation workflow (spec phase + quality phase + TDD pressure testing) |
 | `audit` | Skill verification — structure, frontmatter, invocation control, CSO compliance |
 
 ## Design
