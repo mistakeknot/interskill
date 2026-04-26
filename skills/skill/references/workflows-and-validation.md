@@ -115,7 +115,7 @@ Test the output document
 </editing_process>
 
 <validation>
-Never skip validation. Catching errors early prevents corrupted output files.
+Always run validation. Catching errors early prevents corrupted output files.
 </validation>
 ```
 </document_editing_example>

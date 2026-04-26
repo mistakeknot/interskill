@@ -587,7 +587,7 @@ Domain expertise skill is complete when:
 - Forget to check if libraries are still maintained
 - Organize by document type instead of domain concerns
 - Make it knowledge-only with no execution workflows
-- Skip verification steps in workflows
+- Omit verification steps in workflows
 - Include outdated content from old blog posts
 - Skip decision trees and comparisons
 - Create workflows that just say "read the references"
