@@ -40,6 +40,12 @@ Given a skill path (SKILL.md or skill directory), check each item below. Report 
 - [ ] No "punting" patterns (scripts handle errors, not "ask Claude to fix")
 - [ ] No overly broad descriptions ("helps with things")
 
+### Optional Intermesh Manifest
+
+- [ ] If `intermesh.yaml` exists and `command -v intermesh >/dev/null 2>&1` succeeds, run `intermesh manifest validate <path>/intermesh.yaml`; report its diagnostics as normal audit findings.
+- [ ] If Intermesh is unavailable, mark manifest validation `SKIP` rather than WARN/FAIL and continue the existing audit unchanged.
+- [ ] The absence of `intermesh.yaml` is not an audit finding unless the user explicitly requires Intermesh routing metadata.
+
 ## Output Format
 
 ```

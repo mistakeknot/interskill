@@ -129,6 +129,12 @@ Quick summary:
 4. Add reference files if needed
 5. Link references from SKILL.md
 
+### Optional Intermesh Metadata
+
+If the skill has explicit phrase, file-extension, environment, dependency, composition, conflict, or supersession relationships, offer to create an adjacent `intermesh.yaml`. Keep `SKILL.md` canonical; the manifest contains routing relationships only.
+
+When `command -v intermesh >/dev/null 2>&1` succeeds, validate a created manifest with `intermesh manifest validate <skill-directory>/intermesh.yaml` and fix every reported error before completion. If Intermesh is unavailable, skip manifest generation and validation unless the user explicitly requested it; the existing skill-authoring workflow must continue unchanged.
+
 ### Phase 2: TDD Pressure Testing
 
 After creating the skill, validate it using TDD-adapted testing. See [references/testing-skills-with-subagents.md](references/testing-skills-with-subagents.md) for the full methodology.
