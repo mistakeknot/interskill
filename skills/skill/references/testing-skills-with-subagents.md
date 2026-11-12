@@ -193,7 +193,7 @@ from the requirement: write a failing test, observe the failure, then implement.
 Done when: the test failed before the replacement implementation and passes after it.
 ```
 
-Describe the action that resolves the observed failure. Keep a narrow negation only when a pressure test shows the positive instruction still permits a specific loophole, or when an exact safety boundary needs an explicit prohibition. Pair it with the required action and re-test it; retain it only if the evidence justifies the extra wording.
+Describe the action that resolves the observed failure. Preserve explicit prohibitions that protect safety or authority boundaries, including approval gates; they need no deletion trial. For other rules, add a narrow negation only when a pressure test shows the positive instruction still permits a specific loophole. Pair that negation with the required action and re-test it; retain the extra wording only if the test supports it.
 
 Done when: the revised rule produces the required action in the scenario that exposed the loophole.
 
@@ -328,7 +328,7 @@ Before deploying skill, verify you followed RED-GREEN-REFACTOR:
 - [ ] Added explicit counters for each loophole
 - [ ] Updated rationalization table
 - [ ] Updated red flags list
-- [ ] Updated description with violation symptoms
+- [ ] Checked description against the observed entry cases; added a trigger only for a new case (step 4)
 - [ ] Re-tested - agent still complies
 - [ ] Meta-tested to verify clarity
 - [ ] Agent follows rule under maximum pressure
