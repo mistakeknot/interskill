@@ -177,52 +177,56 @@ Agent violated rule despite having the skill? This is like a test regression - y
 
 ### Plugging Each Hole
 
-For each new rationalization, add:
+For each new rationalization, revise the rule at its existing home and update the test evidence:
 
-### 1. Explicit Negation in Rules
+### 1. Replacement Action in Rules
 
-<Before>
+Before:
 ```markdown
 Write code before test? Delete it.
 ```
-</Before>
 
-<After>
+After:
 ```markdown
-Write code before test? Delete it. Start over.
-
-**No exceptions:**
-- Don't keep it as "reference"
-- Don't "adapt" it while writing tests
-- Don't look at it
-- Delete means delete
+If implementation preceded its test, remove that implementation and restart
+from the requirement: write a failing test, observe the failure, then implement.
+Done when: the test failed before the replacement implementation and passes after it.
 ```
-</After>
+
+Describe the action that resolves the observed failure. Keep a narrow negation only when a pressure test shows the positive instruction still permits a specific loophole, or when an exact safety boundary needs an explicit prohibition. Pair it with the required action and re-test it; retain it only if the evidence justifies the extra wording.
+
+Done when: the revised rule produces the required action in the scenario that exposed the loophole.
 
 ### 2. Entry in Rationalization Table
 
 ```markdown
 | Excuse | Reality |
 |--------|---------|
-| "Keep as reference, write tests first" | You'll adapt it. That's testing after. Delete means delete. |
+| "Keep as reference, write tests first" | Restart from the requirement using the replacement-action rule above. |
 ```
+
+Done when: each observed excuse maps to the rule that resolves it, with a link when the rule lives elsewhere.
 
 ### 3. Red Flag Entry
 
 ```markdown
 ## Red Flags - STOP
 
-- "Keep as reference" or "adapt existing code"
-- "I'm following the spirit not the letter"
+- Implementation retained as a reference → apply the replacement-action rule above.
+- "I'm following the spirit not the letter" → check the action against the rule's completion condition.
 ```
+
+Done when: each observed warning sign points to a concrete recovery action.
 
 ### 4. Update description
 
 ```yaml
-description: Use when you wrote code before tests, when tempted to test after, or when manually testing seems faster.
+description: Use when implementation preceded its test or delivery pressure threatens the test-first sequence.
 ```
 
-Add symptoms of ABOUT to violate.
+Add a distinct trigger only when the scenario reveals a new entry case.
+
+Done when: the description covers the observed entry cases once each.
 
 ### Re-verify After Refactoring
 
@@ -257,7 +261,7 @@ it crystal clear that Option A was the only acceptable answer?
 
 2. **"The skill should have said X"**
    - Documentation problem
-   - Add their suggestion verbatim
+   - Evaluate the suggestion against the observed failure and write a concrete replacement action
 
 3. **"I didn't see section Y"**
    - Organization problem
@@ -348,8 +352,8 @@ Agents resist single pressure, break under multiple.
 ✅ Fix: Document exact rationalizations verbatim.
 
 **❌ Vague fixes (adding generic counters)**
-"Don't cheat" doesn't work. "Don't keep as reference" does.
-✅ Fix: Add explicit negations for each specific rationalization.
+"Don't cheat" leaves the next action unclear; "restart from the requirement with a failing test" gives an observable recovery step.
+✅ Fix: Use the replacement-action guidance above, then re-run the scenario that exposed the loophole.
 
 **❌ Stopping after first pass**
 Tests pass once ≠ bulletproof.

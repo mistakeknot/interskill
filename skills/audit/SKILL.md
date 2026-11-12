@@ -40,6 +40,14 @@ Given a skill path (SKILL.md or skill directory), check each item below. Report 
 - [ ] No "punting" patterns (scripts handle errors, not "ask Claude to fix")
 - [ ] No overly broad descriptions ("helps with things")
 
+### Instruction Writing
+- [ ] Delete test: flag sentences the model follows without prompting; remove them if rerunning the same scenario without the sentence preserves the required behavior.
+- [ ] Prefer a concrete action ("do X") to a ban ("avoid Y"); naming the unwanted behavior can put it in focus. For pressure-test failures, use the [replacement-action guidance](../skill/references/testing-skills-with-subagents.md#1-replacement-action-in-rules).
+- [ ] Every procedural step ends with a "Done when:" line naming an observable result (a file, command result, or recorded decision), rather than "reviewed" or "understood".
+- [ ] The description names each distinct trigger case once; merge synonyms that route the same request.
+- [ ] Configuration values and command options stay in their config file or `--help`; link to that source and explain only the skill-specific decision.
+- [ ] Each rule has one authoritative home; other sections link to it instead of repeating it.
+
 ### Optional Intermesh Manifest
 
 - [ ] If `intermesh.yaml` exists and `command -v intermesh >/dev/null 2>&1` succeeds, run `intermesh manifest validate <path>/intermesh.yaml`; report its diagnostics as normal audit findings.
@@ -55,6 +63,7 @@ Structure:          {N}/6 pass
 Invocation Control: {N}/4 pass
 Content Quality:    {N}/5 pass
 Anti-Patterns:      {N}/4 pass
+Instruction Writing: {N}/6 pass
 ──────────────────────────────
 Overall: {PASS | WARN (N issues) | FAIL (N issues)}
 
